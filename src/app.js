@@ -7,7 +7,7 @@ import AuthenticationKey from './firebase';
 
 class App extends Component {
     componentDidMount() {
-
+        AuthenticationKey();
     }
 
     render() {
