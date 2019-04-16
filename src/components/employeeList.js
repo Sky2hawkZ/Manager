@@ -6,6 +6,8 @@ import { employeesFetch } from '../actions';
 import ListItem from './listItem';
 
 class EmployeeList extends Component {
+
+
     componentDidMount() {
         this.props.employeesFetch();
     }
@@ -18,7 +20,11 @@ class EmployeeList extends Component {
 
     render() {
         return (
-            <FlatList data={this.props.employees} renderItem={({ item }) => <ListItem employee={item} />} />
+            <FlatList
+                data={this.props.employees}
+                renderItem={({ item }) => <ListItem employee={item} />}
+                keyExtractor={(item) => item.uid}
+            />
         );
     }
 }
